@@ -21,16 +21,16 @@ class MedicationLogScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '用藥提醒紀錄',
+              '智慧用藥管理',
               style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(child: Text('name', style: TextStyle(fontWeight: FontWeight.bold))),
-                Expanded(child: Text('time', style: TextStyle(fontWeight: FontWeight.bold))),
-                Expanded(child: Text('method', style: TextStyle(fontWeight: FontWeight.bold))),
+                Expanded(child: Text('藥物名稱', style: TextStyle(fontWeight: FontWeight.bold))),
+                Expanded(child: Text('服用時間', style: TextStyle(fontWeight: FontWeight.bold))),
+                Expanded(child: Text('服用方式', style: TextStyle(fontWeight: FontWeight.bold))),
               ],
             ),
             const Divider(),
@@ -55,6 +55,10 @@ class MedicationLogScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
       ),
     );
   }

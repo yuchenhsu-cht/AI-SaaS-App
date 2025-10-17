@@ -1,16 +1,30 @@
-# aisaas
+# AISaaS App
 
-A new Flutter project.
+This is a Flutter-based application for AISaaS.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get a local copy up and running, follow these simple steps.
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Make sure you have the Flutter SDK installed on your machine. For more information, see the [Flutter documentation](https://flutter.dev/docs/get-started/install).
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/AISaaS-app.git
+   ```
+2. Install packages
+   ```sh
+   flutter pub get
+   ```
+
+### Running the Application
+
+1. Make sure you have a device connected or an emulator running.
+2. Run the following command to start the application:
+   ```sh
+   flutter run
+   ```

@@ -15,7 +15,7 @@ class HealthDashboardScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '健康數據',
+                '健康數據儀表板',
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
@@ -28,7 +28,7 @@ class HealthDashboardScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(16.0),
                         child: Column(
                           children: [
-                            const Text('步數', style: TextStyle(fontWeight: FontWeight.bold)),
+                            const Text('今日步數', style: TextStyle(fontWeight: FontWeight.bold)),
                             const SizedBox(height: 10),
                             Stack(
                               alignment: Alignment.center,
@@ -37,7 +37,7 @@ class HealthDashboardScreen extends StatelessWidget {
                                   width: 80,
                                   height: 80,
                                   child: CircularProgressIndicator(
-                                    value: 2579 / 10000,
+                                    value: 8500 / 10000,
                                     strokeWidth: 8,
                                     backgroundColor: Colors.grey[300],
                                     valueColor: const AlwaysStoppedAnimation<Color>(Colors.orange),
@@ -47,9 +47,8 @@ class HealthDashboardScreen extends StatelessWidget {
                               ],
                             ),
                             const SizedBox(height: 10),
-                            const Text('stopped'),
-                            const Text('2579 / 10000'),
-                            const Text('今日'),
+                            const Text('目標: 10,000'),
+                            const Text('8,500'),
                           ],
                         ),
                       ),
@@ -63,12 +62,11 @@ class HealthDashboardScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(16.0),
                         child: Column(
                           children: [
-                            const Text('心跳', style: TextStyle(fontWeight: FontWeight.bold)),
+                            const Text('即時心率', style: TextStyle(fontWeight: FontWeight.bold)),
                             const SizedBox(height: 10),
-                            const Icon(Icons.local_fire_department, color: Colors.red, size: 80),
+                            const Icon(Icons.favorite, color: Colors.red, size: 80),
                             const SizedBox(height: 10),
-                            Text('73 /分', style: Theme.of(context).textTheme.titleLarge),
-                            const Text('今日'),
+                            Text('88 /分', style: Theme.of(context).textTheme.titleLarge),
                           ],
                         ),
                       ),
@@ -85,7 +83,7 @@ class HealthDashboardScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       const Text(
-                        '過去五天的步數統計',
+                        '本週步數統計',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 20),
@@ -94,7 +92,7 @@ class HealthDashboardScreen extends StatelessWidget {
                         child: BarChart(
                           BarChartData(
                             alignment: BarChartAlignment.spaceAround,
-                            maxY: 10000,
+                            maxY: 12000,
                             barTouchData: BarTouchData(enabled: false),
                             titlesData: const FlTitlesData(
                               show: true,
@@ -115,7 +113,7 @@ class HealthDashboardScreen extends StatelessWidget {
                               _buildBarGroupData(1, 6800),
                               _buildBarGroupData(2, 9200),
                               _buildBarGroupData(3, 8100),
-                              _buildBarGroupData(4, 6800),
+                              _buildBarGroupData(4, 8500),
                             ],
                           ),
                         ),

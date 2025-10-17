@@ -31,7 +31,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('蘇林彩香 您好'),
+        title: const Text('樂齡守護'),
         backgroundColor: Colors.purple[100],
         actions: [
           IconButton(
@@ -47,19 +47,19 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '聊天主頁面',
+            icon: Icon(Icons.chat),
+            label: 'AI 語音聊天',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.directions_walk),
-            label: '健康偵測',
+            icon: Icon(Icons.health_and_safety),
+            label: '健康數據',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add),
-            label: '用藥提醒紀錄',
+            icon: Icon(Icons.medical_services),
+            label: '用藥管理',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.sentiment_satisfied_alt),
+            icon: Icon(Icons.contact_mail),
             label: '緊急連絡卡',
           ),
         ],

@@ -1,6 +1,6 @@
 # AISaaS App
 
-This is a Flutter-based application for AISaaS.
+A Flutter-based application for AISaaS, designed to assist seniors with their daily health and wellness management.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ Make sure you have the Flutter SDK installed on your machine. For more informati
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/AISaaS-app.git
+   git clone https://github.com/yuchenhsu-cht/AI-SaaS-App.git
    ```
 2. Install packages
    ```sh

@@ -7,47 +7,124 @@ class MedicationLogScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<MedicationRecord> records = [
-      MedicationRecord(name: '蘇林彩香', time: '2022-10-11T22:00:00', method: '睡前'),
-      MedicationRecord(name: '蘇林彩香', time: '2022-10-08T22:00:00', method: '睡前'),
-      MedicationRecord(name: '蘇林彩香', time: '2022-10-07T22:00:00', method: '睡前'),
-      MedicationRecord(name: '蘇林彩香', time: '2022-10-06T22:00:00', method: '睡前'),
-      MedicationRecord(name: '蘇林彩香', time: '2022-10-05T22:00:00', method: '睡前'),
+      MedicationRecord(name: 'Lisinopril', time: '8:00 AM', method: 'After breakfast'),
+      MedicationRecord(name: 'Metformin', time: '7:00 PM', method: 'After dinner'),
+      MedicationRecord(name: 'Lisinopril', time: '8:00 AM', method: 'After breakfast'),
+      MedicationRecord(name: 'Atorvastatin', time: '9:00 PM', method: 'Before sleep'),
+      MedicationRecord(name: 'Metformin', time: '7:00 PM', method: 'After dinner'),
     ];
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {},
+        ),
+        title: const Text(
+          'Medication History',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              '智慧用藥管理',
-              style: Theme.of(context).textTheme.headlineMedium?.copyWith(fontWeight: FontWeight.bold),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12.0),
+              child: const Text(
+                'Today',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
             const SizedBox(height: 20),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Expanded(child: Text('藥物名稱', style: TextStyle(fontWeight: FontWeight.bold))),
-                Expanded(child: Text('服用時間', style: TextStyle(fontWeight: FontWeight.bold))),
-                Expanded(child: Text('服用方式', style: TextStyle(fontWeight: FontWeight.bold))),
-              ],
-            ),
-            const Divider(),
             Expanded(
               child: ListView.builder(
                 itemCount: records.length,
                 itemBuilder: (context, index) {
                   final record = records[index];
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(child: Text(record.name)),
-                        Expanded(child: Text(record.time.split('T')[0])),
-                        Expanded(child: Text(record.method)),
-                      ],
+                  return Card(
+                    elevation: 0,
+                    margin: const EdgeInsets.only(bottom: 12.0),
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 16.0),
+                      child: Row(
+                        children: [
+                          Container(
+                            padding: const EdgeInsets.all(8.0),
+                            decoration: BoxDecoration(
+                              color: Colors.blue.shade100,
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            child: const Icon(
+                              Icons.medical_services_outlined,
+                              color: Colors.blue,
+                              size: 24.0,
+                            ),
+                          ),
+                          const SizedBox(width: 12.0),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  record.name,
+                                  style: const TextStyle(
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 4.0),
+                                Text(
+                                  record.method,
+                                  style: TextStyle(
+                                    color: Colors.grey[600],
+                                    fontSize: 14.0,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 12.0,
+                              vertical: 6.0,
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.green.shade50,
+                              borderRadius: BorderRadius.circular(12.0),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  Icons.check_circle_outline,
+                                  color: Colors.green,
+                                  size: 16.0,
+                                ),
+                                const SizedBox(width: 4.0),
+                                Text(
+                                  record.time,
+                                  style: TextStyle(
+                                    color: Colors.green,
+                                    fontSize: 14.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   );
                 },
